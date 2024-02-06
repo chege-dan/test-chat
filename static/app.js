@@ -21,13 +21,12 @@ class Chatbox {
         sendButton.addEventListener("click", () => this.onSendButton(chatBox))
         
         const node = chatBox.querySelector('input');
-        node.addEventListener("keyup", ({key:string }) =>{
-            let key;
-            // check here
-            if (key === "Enter"){
-                this.onSendButton(chatBox)
-            }
-        })
+        node.addEventListener("keyup", ({ key: pressedKey }) => {
+            if (pressedKey === "Enter") {
+                this.onSendButton(chatBox);
+              }
+});
+
     
     
     }
@@ -83,7 +82,7 @@ class Chatbox {
 
         updateChatText(chatbox){
             var html = '';
-            this.message.slice().reverse().forEach(function(item, index) {
+            this.message.slice().reverse().forEach(function(item) {
                 if (item.name === "Omondi")
                 {
                     html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
