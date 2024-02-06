@@ -36,6 +36,8 @@ class Chatbox {
 
         if(this.state){
             chatbox.classList.add('chatbox--active')
+            const inputField = chatbox.querySelector('input');
+            inputField.focus();
 
         }else{
             chatbox.classList.remove('chatbox--active')
@@ -83,7 +85,7 @@ class Chatbox {
         updateChatText(chatbox){
             var html = '';
             this.message.slice().reverse().forEach(function(item) {
-                if (item.name === "Omondi")
+                if (item.name === "Omosh")
                 {
                     html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
                 }

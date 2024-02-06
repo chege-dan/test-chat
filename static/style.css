@@ -23,8 +23,8 @@ body {
 =============== */
 .chatbox {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 10px;
+    right: 10px;
 }
 
 /* CONTENT IS CLOSE */
@@ -33,11 +33,12 @@ body {
     flex-direction: column;
     background: #eee;
     width: 150px;
-    height: 150px;
+    height: 50px;
     z-index: -123456;
     opacity: 0;
     transition: all .5s ease-in-out;
 }
+
 
 /* CONTENT ISOPEN */
 .chatbox--active {
@@ -55,13 +56,21 @@ body {
 }
 
 .send__button {
-    padding: 6px;
-    background: transparent;
+    background-color: #7dabdc; /* Blue */
+    color: white;
     border: none;
-    outline: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
+.chatbox__send--footer.send__button:hover {
+    background-color: #0f3e70; /* Darker Blue */
+}
 
 /* HEADER */
 .chatbox__header {
@@ -147,11 +156,10 @@ body {
 }
 
 .messages__item--visitor{
-        margin-left: auto;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         border-bottom-left-radius: 20px;
-        background: #3434bc;
+        background: #5050df;
         color: white
 }
 .messages__item--typing {
