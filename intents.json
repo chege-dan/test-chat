@@ -111,6 +111,15 @@
         "Have you requested for a reset key from I.T?"
       ],
       "context": ["bitlocker", "bitlocker reset", "reset bitlocker", "resetting bitlocker"]
+    },
+    {
+      "tag": "Cable
+      ",
+      "patterns": ["I want a bitlocker reset", "reset my bitlocker", "bitlocker reset"],
+      "responses": [
+        "Have you requested for a reset key from I.T?"
+      ],
+      "context": ["bitlocker", "bitlocker reset", "reset bitlocker", "resetting bitlocker"]
     }
   ]
 }
