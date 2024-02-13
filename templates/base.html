@@ -3,8 +3,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <head>
-    <title>I.T chatbit</title>
-    <link rel="icon" type="image/png" href="../static/images/download (1).svg">
+    <meta charset="UTF-8">
+    <title>I.T Chatbot</title>
+    <link rel="icon" type="image/png" href="../static/images/download (1).jpg">
 </head>
 <body>
 <div class="container">
@@ -12,12 +13,21 @@
         <div class="chatbox__support">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
-                    <img src="../static/images/download (1).svg" alt="image">
+                   <!-- <img src="../static/images/download (1).jpg" alt="image"> -->
                 </div>
                 <div class="chatbox__content--header">
                     <h4 class="chatbox__heading--header">Chat support</h4>
-                    <p class="chatbox__description--header">Hi. My name is Omosh, C.A's chatbox, how can I help you?</p>
+                    <p class="chatbox__description--header">Hi. My name is Omosh, C.A's chatbox .</p>
+                    <!--<button class="settings-button" id="settingsButton">...</button>-->
+                    <div class="dropdown">
+                        <button class="settings-button" id="settingsButton"><img width="48" height="48" src="https://img.icons8.com/color/48/settings-3--v1.png" alt="Settings"></button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#" id="maximizeButton">Maximize</a>
+                            <a href="#" id="downloadButton">Download</a>
+                        </div>
+                      </div>
                 </div>
+              
             </div>
             <div class="chatbox__messages">
                 <div></div>

@@ -12,7 +12,7 @@ body {
 }
 
 *, html {
-    --primaryGradient: linear-gradient(93.12deg, #e2e6ed 0.52%, #1e4b94 100%);
+    --primaryGradient: linear-gradient(93.12deg, #1e4b94 0.52%, #1e4b94 100%);
     --secondaryGradient: linear-gradient(268.91deg, #e2e6ed -2.14%, #1e4b94 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
@@ -56,6 +56,7 @@ body {
 }
 
 .send__button {
+    margin-right: auto;
     background-color: #7dabdc; /* Blue */
     color: white;
     border: none;
@@ -67,6 +68,50 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+.chatbox__send--footer.send__button:hover {
+    background-color: #0f3e70; /* Darker Blue */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .settings-button:hover + .dropdown-content {
+    display: block; /* Show dropdown content when settings button is hovered */
+ }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown-content:hover  {
+    display: block;
+  }
+  
+  .settings-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+
 
 .chatbox__send--footer.send__button:hover {
     background-color: #0f3e70; /* Darker Blue */
@@ -116,6 +161,14 @@ body {
     border-top-right-radius: 20px;
 }
 
+.chatbox__support2 {
+    background: #f9f9f9;
+    height: 510px;
+    width: 700px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 /* HEADER */
 .chatbox__header {
     background: var(--primaryGradient);
