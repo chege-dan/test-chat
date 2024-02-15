@@ -103,11 +103,19 @@ class Chatbox {
         this.dropdownVisible = !this.dropdownVisible; // Toggle dropdown visibility state
     }
     maximizeChatbox() {
-        // Functionality to maximize the chatbox
-        console.log('Maximize button clicked');
-        chatbox.classList.toggle('chatbox__support');
-        chatbox.classList.toggle('chatbox__support2');
-    }
+            if (chatbotContainer.requestFullscreen) {
+                chatbotContainer.requestFullscreen();
+            } else if (chatbotContainer.mozRequestFullScreen) { /* Firefox */
+                chatbotContainer.mozRequestFullScreen();
+            } else if (chatbotContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                chatbotContainer.webkitRequestFullscreen();
+            } else if (chatbotContainer.msRequestFullscreen) { /* IE/Edge */
+                chatbotContainer.msRequestFullscreen();
+            }
+        }
+
+       
+    
 
     downloadChatHistory() {
         // Functionality to download chat history

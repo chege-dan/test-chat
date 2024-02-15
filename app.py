@@ -9,6 +9,9 @@ app = Flask(__name__)
 def index_get():
     return render_template("base.html")
 
+@app.route('/maximize')
+def max():
+    return render_template('maximize.html')
 
 @app.post("/predict")
 def predict ():
