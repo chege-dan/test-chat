@@ -2,7 +2,7 @@
   {"tag": "greeting",
    "patterns": ["Hi there", "Hello", "Hola","Hey","Hi", "Hello", "Good morning","Good Evening"],
    "responses": ["Hello, Welcome to Our IT Chatbot", "Good to see you, Welcome to our IT Chatbot", "Hi there, how can I help?"],
-   "context": ["hello","niaje","vipi","hi","hey","wozza","janjez"]
+   "context": ["hello"]
   },
   {"tag": "goodbye",
    "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time","Bye Chatbot"],
@@ -22,7 +22,7 @@
   {"tag": "options",
    "patterns": ["How could you help me?", "What can you do?", "What help can you provide?", "How you can be helpful?", "What support is offered","What services do you provide?","What can you help me with?"],
    "responses": ["I can guide you through\n 1)Password Reset\n2) Trouble-Shooting issues\n3) Virus Issues\n4) Printing Issues\n5) many more IT issues", "Offering support for \n1) Password Reset\n2) Trouble-Shooting issues\n3) Virus Issues\n4) Printer issues\n5) Other IT tasks"],
-   "context": [""]
+   "context": ["help","helpful"]
   },
   {"tag": "Password Reset",
    "patterns": ["How to reset my password?","I’m unable to log in!","My Password is Lost, need to Reset.","Open password reset module", "Reset my password", "Forgot password", "how do i reset my password?","Hi,I have problem with my password","Problem with Login ID" ],
@@ -38,7 +38,7 @@
   {"tag": "Blue Sreen issue",
    "patterns": ["I’ve got the dreaded blue screen of death!","blue screen issue"],
    "responses": ["This problem is usually related to hardware or a driver that is not working correctly. It usually happens after you install a new piece of hardware or update some drivers.Simply rebooting can fix the blue screen of death (or STOP error, as it is otherwise known).","rebooting can help the issue"],
-   "context": [""]
+   "context": ["blue screen"]
   },
   {"tag": "Deleted files",
    "patterns": ["I deleted some important files!", "Find my deleted files", "removed neccesary files","I by mistake deleted my folders","Can you help me with deleted files issue","I am unable to find my files"],
@@ -106,15 +106,6 @@
     },
     {
       "tag": "bitlocker",
-      "patterns": ["I want a bitlocker reset", "reset my bitlocker", "bitlocker reset"],
-      "responses": [
-        "Have you requested for a reset key from I.T?"
-      ],
-      "context": ["bitlocker", "bitlocker reset", "reset bitlocker", "resetting bitlocker"]
-    },
-    {
-      "tag": "Cable
-      ",
       "patterns": ["I want a bitlocker reset", "reset my bitlocker", "bitlocker reset"],
       "responses": [
         "Have you requested for a reset key from I.T?"

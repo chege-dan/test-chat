@@ -120,6 +120,19 @@ class Chatbox {
     downloadChatHistory() {
         // Functionality to download chat history
         console.log('download button clicked');
+         // Prepare chat history data
+         const chatHistory = this.messages.map(msg => `${msg.name}: ${msg.message}`).join('\n');
+        
+         // Create a Blob containing the chat history text
+         const blob = new Blob([chatHistory], { type: 'text/plain' });
+ 
+         // Create a link element
+         const link = document.createElement('a');
+         link.href = URL.createObjectURL(blob);
+         link.download = 'chat_history.txt'; // Set filename
+ 
+         // Trigger a click event on the link to prompt download
+         link.click();
     }
 }
 

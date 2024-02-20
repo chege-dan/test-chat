@@ -47,11 +47,7 @@ def get_response(msg):
                 return random.choice(intent['responses'])
     
     return "haujinawo..."
-def format_responses(responses):
-    formatted_responses = ""
-    for i, response in enumerate(response, start=1):
-        formatted_response += f"{i}. {response}\n"
-    return formatted_responses
+
 
 
 if __name__ == "__main__":
