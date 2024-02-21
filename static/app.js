@@ -7,6 +7,7 @@ class Chatbox {
             maximizeButton: document.getElementById('maximizeButton'), // New maximize button reference
             downloadButton: document.getElementById('downloadButton'), // New download button reference
             settingsButton: document.getElementById('settingsButton'), // New settings button reference
+            attachmentButton: document.getElementById('attachButton'),
             dropdownContent: document.getElementById('dropdownContent') // New dropdown content reference
         }
 
@@ -29,6 +30,7 @@ class Chatbox {
         maximizeButton.addEventListener('click', () => this.maximizeChatbox()); // No need to pass arguments
 
         downloadButton.addEventListener('click', () => this.downloadChatHistory());
+        attachButton.addEventListener('change', (event) => this.handleAttachment(event));
     
         const node = chatBox.querySelector('input');
         node.addEventListener("keyup", ({ key }) => {
@@ -69,7 +71,7 @@ class Chatbox {
         })
             .then(r => r.json())
             .then(r => {
-                let msg2 = { name: "Omosh", message: r.answer };
+                let msg2 = { name: "Pendo", message: r.answer };
                 this.messages.push(msg2);
                 this.updateChatText(chatbox);
                 textField.value = '';
@@ -83,7 +85,7 @@ class Chatbox {
     updateChatText(chatbox) {
         var html = '';
         this.messages.slice().reverse().forEach(function (item) {
-            if (item.name === "Omosh") {
+            if (item.name === "Pendo") {
                 html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>';
             } else {
                 html += '<div class="messages__item messages__item--operator">' + item.message + '</div>';
@@ -114,7 +116,12 @@ class Chatbox {
             }
         }
 
-       
+        handleAttachment(event) {
+            console.log('attach button clicked');
+            const files = event.target.files;
+            // Process the selected files
+            console.log(files);
+        }
     
 
     downloadChatHistory() {
