@@ -118,7 +118,7 @@ class Chatbox {
 
         handleAttachment(event) {
             console.log('attach button clicked');
-            const files = event.target.files;
+            const files = document.querySelector('#attachInput').files;
             // Process the selected files
             console.log(files);
         }
