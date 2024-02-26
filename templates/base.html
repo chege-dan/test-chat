@@ -35,7 +35,8 @@
             <div class="chatbox__footer">
                 <input type="text" placeholder="Write a message...">
                 <!-- <input type="file"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></input> -->
-                <button class="chatbox__attach--footer attach__button" id="attachButton"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></button>
+                <button class="chatbox__attach--footer attach__button" id="attachButton"onclick="document.querySelector('#attachInput').click()"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></button>
+                <input type="file" id="attachInput" style="display: none;">
                 <button class="chatbox__send--footer send__button">Send</button>
             </div>
         </div>
