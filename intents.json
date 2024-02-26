@@ -1,7 +1,7 @@
 {"intents": [
   {"tag": "greeting",
    "patterns": ["Hi there", "Hello", "Hola","Hey","Hi", "Hello", "Good morning","Good Evening","buda"],
-   "responses": ["Hello, Welcome to Our IT Chatbot", "Good to see you, Welcome to our IT Chatbot", "Hi there, how can I help?"],
+   "responses": ["Hello, Welcome to Our IT Chatbot. How may we help you?", "Welcome to our IT Chatbot, how may we help you?", "Hi there, how can I help?"],
    "context": ["hello"]
   },
   {"tag": "goodbye",
