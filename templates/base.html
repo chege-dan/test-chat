@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <head>
     <meta charset="UTF-8">
     <title>I.T Chatbot</title>
     <link rel="icon" type="image/png" href="../static/images/download (1).jpg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
 <div class="container">
@@ -13,11 +13,10 @@
         <div class="chatbox__support" id="chatbotContainer">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
-                   <!-- <img src="../static/images/download (1).jpg" alt="image"> -->
+                   <!--<img src="static\images\Communications-Authority-of-Kenya-TENDER.webp" alt="image">-->
                 </div>
                 <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">Chat support</h4>
-                    <p class="chatbox__description--header">Hi. My name is Pendo, C.A's chatbox .</p>
+                    <h2 class="chatbox__heading--header"> C.A chatbot </h2>
                     <!--<button class="settings-button" id="settingsButton">...</button>-->
                     <div class="dropdown">
                         <button class="settings-button" id="settingsButton"><img width="48" height="48" src="https://img.icons8.com/color/48/settings-3--v1.png" alt="Settings"></button>
@@ -35,8 +34,7 @@
             <div class="chatbox__footer">
                 <input type="text" placeholder="Write a message...">
                 <!-- <input type="file"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></input> -->
-                <button class="chatbox__attach--footer attach__button" id="attachButton"onclick="document.querySelector('#attachInput').click()"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></button>
-                <input type="file" id="attachInput" style="display: none;">
+                <button class="chatbox__attach--footer attach__button" id="attachButton"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/attach.png" alt="attach"/></button>
                 <button class="chatbox__send--footer send__button">Send</button>
             </div>
         </div>
