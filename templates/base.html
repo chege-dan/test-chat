@@ -39,19 +39,17 @@
             </div>
         </div>
         <div class="chatbox__button">
-            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            <button id="openChatButton">Open Chat</button> <!-- Add this button -->
         </div>
     </div>
 </div>
- <!--
-    <script>
-        $SCRIPT_ROOT = {{ request.script_root|tojson }};
-    </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>-->
-    <script>
-        $SCRIPT_ROOT = {{ request.script_root|tojson }};
-    </script>
-    <script type="text/javascript" src="../static/app.js"></script>
+
+<script>
+    // JavaScript to handle opening the chatbox when the button is clicked
+    document.getElementById("openChatButton").addEventListener("click", function() {
+        document.getElementById("chatbotContainer").style.display = "block";
+    });
+</script>
     
 </body>
-</html
+</html>

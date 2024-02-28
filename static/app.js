@@ -4,16 +4,15 @@ class Chatbox {
             openButton: document.querySelector('.chatbox__button'),
             chatBox: document.querySelector('.chatbox__support'),
             sendButton: document.querySelector('.send__button'),
-            maximizeButton: document.getElementById('maximizeButton'), // New maximize button reference
-            downloadButton: document.getElementById('downloadButton'), // New download button reference
-            settingsButton: document.getElementById('settingsButton'), // New settings button reference
-            attachmentButton: document.getElementById('attachButton'),
-            dropdownContent: document.getElementById('dropdownContent') // New dropdown content reference
+            settingsButton: document.getElementById('settingsButton'),
+            dropdownContent: document.getElementById('dropdownContent'),
+            maximizeButton: document.getElementById('maximizeButton'),
+            downloadButton: document.getElementById('downloadButton')
         }
 
         this.state = false;
         this.messages = [];
-        this.dropdownVisible = false; // Track whether dropdown is visible
+        this.dropdownVisible = false;
     }
 
     display() {
@@ -22,15 +21,13 @@ class Chatbox {
         openButton.addEventListener('click', () => this.toggleState(chatBox));
         sendButton.addEventListener('click', () => this.onSendButton(chatBox));
     
-        // Change event listener to listen for click instead of hover
         settingsButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+            event.stopPropagation();
             this.toggleDropdown(dropdownContent);
         });
-        maximizeButton.addEventListener('click', () => this.maximizeChatbox()); // No need to pass arguments
 
+        maximizeButton.addEventListener('click', () => this.maximizeChatbox());
         downloadButton.addEventListener('click', () => this.downloadChatHistory());
-        attachButton.addEventListener('change', (event) => this.handleAttachment(event));
     
         const node = chatBox.querySelector('input');
         node.addEventListener("keyup", ({ key }) => {
@@ -43,7 +40,6 @@ class Chatbox {
     toggleState(chatbox) {
         this.state = !this.state;
 
-        // show or hide the box
         if (this.state) {
             chatbox.classList.add('chatbox--active');
         } else {
@@ -71,7 +67,7 @@ class Chatbox {
         })
             .then(r => r.json())
             .then(r => {
-                let msg2 = { name: "Pendo", message: r.answer };
+                let msg2 = { name: "Omosh", message: r.answer };
                 this.messages.push(msg2);
                 this.updateChatText(chatbox);
                 textField.value = '';
@@ -82,10 +78,11 @@ class Chatbox {
             });
     }
 
+        
     updateChatText(chatbox) {
         var html = '';
         this.messages.slice().reverse().forEach(function (item) {
-            if (item.name === "Pendo") {
+            if (item.name === "Omosh") {
                 html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>';
             } else {
                 html += '<div class="messages__item messages__item--operator">' + item.message + '</div>';
@@ -98,59 +95,31 @@ class Chatbox {
 
     toggleDropdown(dropdownContent) {
         if (this.dropdownVisible) {
-            dropdownContent.classList.remove('show'); // Hide dropdown if it's visible
+            dropdownContent.classList.remove('show');
         } else {
-            dropdownContent.classList.add('show'); // Show dropdown if it's hidden
+            dropdownContent.classList.add('show');
         }
-        this.dropdownVisible = !this.dropdownVisible; // Toggle dropdown visibility state
+        this.dropdownVisible = !this.dropdownVisible;
     }
-    maximizeChatbox() {
-            if (chatbotContainer.requestFullscreen) {
-                chatbotContainer.requestFullscreen();
-            } else if (chatbotContainer.mozRequestFullScreen) { /* Firefox */
-                chatbotContainer.mozRequestFullScreen();
-            } else if (chatbotContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                chatbotContainer.webkitRequestFullscreen();
-            } else if (chatbotContainer.msRequestFullscreen) { /* IE/Edge */
-                chatbotContainer.msRequestFullscreen();
-            }
-        }
 
-        handleAttachment(event) {
-            console.log('attach button clicked');
-            const files = event.target.files;
-            // Process the selected files
-            console.log(files);
-        }
-    
+    maximizeChatbox() {
+        // Functionality to maximize chatbox
+        console.log('maximize button clicked');
+    }
 
     downloadChatHistory() {
         // Functionality to download chat history
         console.log('download button clicked');
-         // Prepare chat history data
-         const chatHistory = this.messages.map(msg => `${msg.name}: ${msg.message}`).join('\n');
-        
-         // Create a Blob containing the chat history text
-         const blob = new Blob([chatHistory], { type: 'text/plain' });
- 
-         // Create a link element
-         const link = document.createElement('a');
-         link.href = URL.createObjectURL(blob);
-         link.download = 'chat_history.txt'; // Set filename
- 
-         // Trigger a click event on the link to prompt download
-         link.click();
     }
 }
 
 const chatbox = new Chatbox();
 chatbox.display();
 
-// Close dropdown when user clicks outside of it
 window.addEventListener('click', function (event) {
     const dropdownContent = document.getElementById('dropdownContent');
     if (!event.target.matches('.settings-button')) {
-        dropdownContent.classList.remove('show'); // Hide dropdown
-        chatbox.dropdownVisible = false; // Update dropdown visibility state
+        dropdownContent.classList.remove('show');
+        chatbox.dropdownVisible = false;
     }
 });

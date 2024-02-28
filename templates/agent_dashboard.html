@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Dashboard</title>
+    <!-- Link to the agent_style.css file for styling -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='agent_style.css') }}">
+<body>
+    <h2>Welcome, {{ current_user.username }}!</h2>
+    <div id="message-container">
+        <!-- Incoming messages from users will be displayed here -->
+    </div>
+    <form id="response-form">
+        <label for="response">Response:</label><br>
+        <textarea id="response" name="response" rows="4" cols="50"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        // Handle incoming messages from users
+        socket.on('user_message', function(data) {
+            var messageContainer = document.getElementById('message-container');
+            var messageElement = document.createElement('div');
+            messageElement.textContent = data.message;
+            messageContainer.appendChild(messageElement);
+        });
+
+        // Submit response form
+        document.getElementById('response-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var response = document.getElementById('response').value;
+            socket.emit('agent_response', { message: response });
+            document.getElementById('response').value = ''; // Clear the response input
+        });
+    </script>
+</body>
+</html>
