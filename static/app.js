@@ -40,8 +40,11 @@ class Chatbox {
     toggleState(chatbox) {
         this.state = !this.state;
 
+        // show or hide the box
         if (this.state) {
             chatbox.classList.add('chatbox--active');
+            const node = chatbox.querySelector('input');
+        node.focus();
         } else {
             chatbox.classList.remove('chatbox--active');
         }
